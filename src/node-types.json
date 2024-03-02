@@ -298,6 +298,10 @@
         "named": true
       },
       {
+        "type": "raw_string",
+        "named": true
+      },
+      {
         "type": "set",
         "named": true
       },
@@ -924,6 +928,10 @@
           "named": true
         },
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "splat_pattern",
           "named": true
         },
@@ -1120,6 +1128,10 @@
       "required": true,
       "types": [
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         }
@@ -1309,6 +1321,10 @@
           },
           {
             "type": "none",
+            "named": true
+          },
+          {
+            "type": "raw_string",
             "named": true
           },
           {
@@ -1547,6 +1563,10 @@
         "types": [
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "raw_string",
             "named": true
           },
           {
@@ -2166,6 +2186,10 @@
           "named": true
         },
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "splat_pattern",
           "named": true
         },
@@ -2644,6 +2668,33 @@
         },
         {
           "type": "expression_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "raw_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "interpolation",
+          "named": true
+        },
+        {
+          "type": "raw_string_start",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        },
+        {
+          "type": "string_end",
           "named": true
         }
       ]
@@ -3167,6 +3218,10 @@
           "named": true
         },
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "splat_pattern",
           "named": true
         },
@@ -3672,6 +3727,10 @@
   {
     "type": "raise",
     "named": false
+  },
+  {
+    "type": "raw_string_start",
+    "named": true
   },
   {
     "type": "return",

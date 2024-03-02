@@ -39,7 +39,7 @@ const PREC = {
 const SEMICOLON = ';';
 
 module.exports = grammar({
-  name: 'python',
+  name: 'python_wrs', // python with raw string
 
   extras: $ => [
     $.comment,
@@ -72,6 +72,7 @@ module.exports = grammar({
     $._indent,
     $._dedent,
     $.string_start,
+    $.raw_string_start,
     $._string_content,
     $.escape_interpolation,
     $.string_end,
@@ -452,7 +453,7 @@ module.exports = grammar({
 
     exec_statement: $ => seq(
       'exec',
-      field('code', choice($.string, $.identifier)),
+      field('code', choice($.string, $.raw_string, $.identifier)),
       optional(
         seq(
           'in',
@@ -563,6 +564,7 @@ module.exports = grammar({
       alias($._tuple_pattern, $.tuple_pattern),
       $.dict_pattern,
       $.string,
+      $.raw_string,
       $.concatenated_string,
       $.true,
       $.false,
@@ -733,6 +735,7 @@ module.exports = grammar({
       $.identifier,
       $.keyword_identifier,
       $.string,
+      $.raw_string,
       $.concatenated_string,
       $.integer,
       $.float,
@@ -1063,8 +1066,14 @@ module.exports = grammar({
     )),
 
     concatenated_string: $ => seq(
-      $.string,
-      repeat1($.string),
+      choice($.string, $.raw_string),
+      repeat1(choice($.string, $.raw_string)),
+    ),
+
+    raw_string: $ => seq(
+      $.raw_string_start,
+      repeat(choice($.interpolation, $.string_content)),
+      $.string_end,
     ),
 
     string: $ => seq(

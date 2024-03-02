@@ -1,5 +1,5 @@
 {
-  "name": "python",
+  "name": "python_wrs",
   "word": "identifier",
   "rules": {
     "module": {
@@ -1811,6 +1811,10 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "raw_string"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "identifier"
               }
             ]
@@ -2380,6 +2384,10 @@
           {
             "type": "SYMBOL",
             "name": "string"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "raw_string"
           },
           {
             "type": "SYMBOL",
@@ -3353,6 +3361,10 @@
         {
           "type": "SYMBOL",
           "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "raw_string"
         },
         {
           "type": "SYMBOL",
@@ -5435,15 +5447,62 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "string"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "string"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "raw_string"
+            }
+          ]
         },
         {
           "type": "REPEAT1",
           "content": {
-            "type": "SYMBOL",
-            "name": "string"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "raw_string"
+              }
+            ]
           }
+        }
+      ]
+    },
+    "raw_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "raw_string_start"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "interpolation"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "string_content"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_end"
         }
       ]
     },
@@ -6232,6 +6291,10 @@
     {
       "type": "SYMBOL",
       "name": "string_start"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "raw_string_start"
     },
     {
       "type": "SYMBOL",

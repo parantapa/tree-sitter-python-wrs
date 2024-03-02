@@ -150,8 +150,8 @@ f'\N{GREEK CAPITAL LETTER DELTA}'
       (string_content)
       (string_end)))
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_content)
       (string_end)))
   (expression_statement
@@ -258,30 +258,30 @@ fg"'
       (string_end)))
   (comment)
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_content)
       (string_end)))
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_content)
       (string_end)))
   (comment)
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_content)
       (interpolation
         (integer))
       (string_end)))
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_end)))
   (expression_statement
-    (string
-      (string_start)
+    (raw_string
+      (raw_string_start)
       (string_content)
       (string_end))))
 
@@ -302,12 +302,12 @@ re.compile(r"(\n|\A)#include\s*['\"]"
         (identifier))
       (argument_list
         (concatenated_string
-          (string
-            (string_start)
+          (raw_string
+            (raw_string_start)
             (string_content)
             (string_end))
-          (string
-            (string_start)
+          (raw_string
+            (raw_string_start)
             (string_content)
             (string_end)))))))
 

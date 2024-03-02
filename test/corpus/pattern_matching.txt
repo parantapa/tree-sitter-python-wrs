@@ -478,8 +478,8 @@ field = call(match=r".*\.txt$")
         (argument_list
           (keyword_argument
             (identifier)
-            (string
-              (string_start)
+            (raw_string
+              (raw_string_start)
               (string_content)
               (string_end))))))))
 
@@ -784,8 +784,8 @@ if match := re.fullmatch(r"(-)?(\d+:)?\d?\d:\d\d(\.\d*)?", time, flags=re.ASCII)
           (identifier)
           (identifier))
         (argument_list
-          (string
-            (string_start)
+          (raw_string
+            (raw_string_start)
             (string_content)
             (string_end))
           (identifier)
